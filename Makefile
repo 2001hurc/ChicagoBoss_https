@@ -56,6 +56,7 @@ rebar_src:
 	@cp $(PWD)/rebar_src/rebar $(PWD)
 	@cp $(PWD)/rebar_src/rebar $(PWD)/skel
 	@rm -rf $(PWD)/rebar_src
+	@sed -i s#'git://github.com'#'https://github.com'#g $(grep -rl 'git://github.com')
 
 get-deps:
 	@$(REBAR) get-deps
